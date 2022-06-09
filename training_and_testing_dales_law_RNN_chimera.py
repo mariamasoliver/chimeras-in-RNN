@@ -113,10 +113,10 @@ for i in range(nt):
                 Pinv = Pinv - (np.outer(q,np.transpose(q)))/(1+np.dot(np.transpose(r),q))
                 d = d - np.outer(np.dot(Pinv,r),e)
                 
-                dep = np.multiply(d[0:NE,:],d[0:NE,:]>0)
-                dem = np.multiply(d[0:NE,:],d[0:NE,:]<0)
-                dip = np.multiply(d[NE:N,:],d[NE:N,:]>0)
-                dim = np.multiply(d[NE:N,:],d[NE:N,:]<0)
+                dep = np.multiply(d[0:NE,:],d[0:NE,:]>0) #returns the positive values stored in d[0:NE]
+                dem = np.multiply(d[0:NE,:],d[0:NE,:]<0) #returns the negative values stored in d[0:NE]
+                dip = np.multiply(d[NE:N,:],d[NE:N,:]>0) #returns the positive values stored in d[NE:N]
+                dim = np.multiply(d[NE:N,:],d[NE:N,:]<0) #returns the negative values stored in d[NE:N]
                 
                 d1[0:NE] = dep
                 d1[NE:N] = dim
