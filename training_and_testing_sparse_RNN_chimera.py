@@ -53,7 +53,7 @@ omega = g*np.multiply(A,B)/np.sqrt(N*p) #Initial weight matrix
 #sparsity level
 c = int(N*p)
 
-#Let's make eta sparse (90% sparse)
+#Let's make eta sparse (10% sparse)
 Q = 1
 np.random.seed(llavor+2)
 s1 = np.random.randint(0,N,size=c)
